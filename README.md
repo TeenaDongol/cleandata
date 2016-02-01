@@ -1,5 +1,4 @@
-# cleandata
-Getting and Cleaning Data Week 4 Assignment
+####Getting and Cleaning Data Week 4 Assignment
 
 #Review criteria
 1. The submitted data set is tidy.
