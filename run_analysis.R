@@ -43,7 +43,11 @@ colnames(data) <- c("Subject", "Activity", featuresAnalysisNamed)
 data$Subject <- as.factor(data$Subject)
 data$Activity <- factor(data$Activity, levels = activities[,1], labels = activities[,2])
 
+# melt the dataset using subject and activity as the id fields, remaining being measure vars
 data.melt <- melt(data, id = c("Subject", "Activity"))
+
+# cast the 'molten' dataset using the 'mean' formula, here we're averaging all measures
 data.avg <- dcast(data.melt, Subject + Activity ~ variable, mean)
 
+# write out the tidy data to a text file
 write.table(data.mean, "tidyData.txt", row.names = F)
